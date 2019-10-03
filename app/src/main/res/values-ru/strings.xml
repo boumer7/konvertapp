@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="CyrillicInput">Введите текст на кириллице</string>
+    <string name="LatinResult">Ваш результат на латинице</string>
+    <string name="TranslateButton">ПЕРЕВЕСТИ</string>
+    <string name="settingsText">Настройки</string>
+    <string name="alertNothingBeenEntered">Вы ничего не ввели</string>
+    <string name="alertSuccessfulTranslate">Переведено успешно</string>
+    <string name="customizeLetters">Правила написания:</string>
+    <string name="copy">Cкопировать</string>
+    <string name="YouHaveAlreadyEnteredText">Вы уже ввели текст</string>
+    <string name="restoreText">Вернуть</string>
+    <string name="SuccessfullyCopied">Cкопировано успешно</string>
+</resources>

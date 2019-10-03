@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name" translatable="false">konvertapp</string>
+    <string name="konvert" translatable="false">KONVERT</string>
+    <string name="CyrillicInput">Enter your text in Cyrillic</string>
+    <string name="TranslateButton">TRANSLATE</string>
+    <string name="LatinResult">Your result in Latin</string>
+    <string name="settings" translatable="false">settings</string>
+    <string name="cameraicon" translatable="false">cameraicon</string>
+    <string name="settingsText">Settings</string>
+    <string name="alertSuccessfulTranslate">Translated successfully</string>
+    <string name="changetouppercase" translatable="false">aa\nAA</string>
+    <string name="alertNothingBeenEntered">You haven\'t entered anything</string>
+    <string name="SuccessfullyCopied">Copied to clipboard </string>
+    <string name="customizeLetters">Letter rules:</string>
+    <string name="copy">Copy</string>
+    <string name="restoreText">Restore</string>
+    <string name="YouHaveAlreadyEnteredText">You have already entered text</string>
+</resources>
