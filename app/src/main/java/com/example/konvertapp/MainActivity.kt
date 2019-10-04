@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
             ExtractedInput = ExtractedInput.replace("Г","G")
             ExtractedInput = ExtractedInput.replace("Д","D")
             ExtractedInput = ExtractedInput.replace("Е","E")
-            ExtractedInput = ExtractedInput.replace("Ё","Yo")
-            ExtractedInput = ExtractedInput.replace("Ж","Zh")
+            ExtractedInput = ExtractedInput.replace("Ё","YO")
+            ExtractedInput = ExtractedInput.replace("Ж","ZH")
             ExtractedInput = ExtractedInput.replace("З","Z")
             ExtractedInput = ExtractedInput.replace("И","I")
             ExtractedInput = ExtractedInput.replace("Й","Y")
@@ -47,17 +47,17 @@ class MainActivity : AppCompatActivity() {
             ExtractedInput = ExtractedInput.replace("Т","T")
             ExtractedInput = ExtractedInput.replace("У","U")
             ExtractedInput = ExtractedInput.replace("Ф","F")
-            ExtractedInput = ExtractedInput.replace("Х","Kh")
-            ExtractedInput = ExtractedInput.replace("Ц","Ts")
-            ExtractedInput = ExtractedInput.replace("Ч","Ch")
-            ExtractedInput = ExtractedInput.replace("Ш","Sh")
-            ExtractedInput = ExtractedInput.replace("Щ","Sch")
+            ExtractedInput = ExtractedInput.replace("Х","KH")
+            ExtractedInput = ExtractedInput.replace("Ц","TS")
+            ExtractedInput = ExtractedInput.replace("Ч","CH")
+            ExtractedInput = ExtractedInput.replace("Ш","SH")
+            ExtractedInput = ExtractedInput.replace("Щ","SCH")
             ExtractedInput = ExtractedInput.replace("Ы","Y")
             ExtractedInput = ExtractedInput.replace("Ь","'")
-            ExtractedInput = ExtractedInput.replace("Ъ","")
+            ExtractedInput = ExtractedInput.replace("Ъ","hardsign")
             ExtractedInput = ExtractedInput.replace("Э","E")
-            ExtractedInput = ExtractedInput.replace("Ю","Yu")
-            ExtractedInput = ExtractedInput.replace("Я","Ya")
+            ExtractedInput = ExtractedInput.replace("Ю","YU")
+            ExtractedInput = ExtractedInput.replace("Я","YA")
 
             // What's up buddy OwO. Looking for sth in my code? Add me on Discord gachiBASS#0127
 
@@ -90,17 +90,84 @@ class MainActivity : AppCompatActivity() {
             ExtractedInput = ExtractedInput.replace("щ","sch")
             ExtractedInput = ExtractedInput.replace("ы","y")
             ExtractedInput = ExtractedInput.replace("ь","'")
-            ExtractedInput = ExtractedInput.replace("ъ","")
+            ExtractedInput = ExtractedInput.replace("ъ","hardsign")
             ExtractedInput = ExtractedInput.replace("э","e")
             ExtractedInput = ExtractedInput.replace("ю","yu")
             ExtractedInput = ExtractedInput.replace("я","ya")
-            ExtractedInput = ExtractedInput.replace("ый","iy")
+
+            if (ExtractedInput.toUpperCase() === ExtractedInput) {
+
+                ExtractedInput = ExtractedInput.toUpperCase()
+
+
+
+            }else if (ExtractedInput.startsWith("ZH")) {
+
+                ExtractedInput = ExtractedInput.replace(ExtractedInput[1].toString(),ExtractedInput[1].toString().toLowerCase())
+
+            }else if (ExtractedInput.startsWith("YO")) {
+
+                ExtractedInput = ExtractedInput.replace(ExtractedInput[1].toString(),ExtractedInput[1].toString().toLowerCase())
+
+            }else if (ExtractedInput.startsWith("KH")) {
+
+                ExtractedInput = ExtractedInput.replace(ExtractedInput[1].toString(),ExtractedInput[1].toString().toLowerCase())
+
+            }else if (ExtractedInput.startsWith("TS")) {
+
+                ExtractedInput = ExtractedInput.replace(ExtractedInput[1].toString(),ExtractedInput[1].toString().toLowerCase())
+
+            }else if (ExtractedInput.startsWith("CH")) {
+
+                ExtractedInput = ExtractedInput.replace(ExtractedInput[1].toString(),ExtractedInput[1].toString().toLowerCase())
+
+            }else if (ExtractedInput.startsWith("SH")) {
+
+                ExtractedInput = ExtractedInput.replace(ExtractedInput[1].toString(),ExtractedInput[1].toString().toLowerCase())
+
+            }else if (ExtractedInput.startsWith("YU")) {
+
+                ExtractedInput = ExtractedInput.replace(ExtractedInput[1].toString(),ExtractedInput[1].toString().toLowerCase())
+
+            }else if (ExtractedInput.startsWith("YA")) {
+
+                ExtractedInput = ExtractedInput.replace(ExtractedInput[1].toString(),ExtractedInput[1].toString().toLowerCase())
+
+            }else if (ExtractedInput.startsWith("SCH")) {
+
+                ExtractedInput = ExtractedInput.replace(ExtractedInput[1].toString(),ExtractedInput[1].toString().toLowerCase())
+                ExtractedInput = ExtractedInput.replace(ExtractedInput[2].toString(),ExtractedInput[2].toString().toLowerCase())
+
+            }
+
+            if (ExtractedInput.endsWith("YY")) {
+
+               ExtractedInput = ExtractedInput.replace("YY","IY")
+
+            }
+
+            if (ExtractedInput.endsWith("yy")) {
+
+                ExtractedInput = ExtractedInput.replace("yy","iy")
+
+            }
+
+            if (ExtractedInput.contains("hardsign"+"E") || ExtractedInput.contains("hardsign"+"e")){
+
+                ExtractedInput = ExtractedInput.replace("hardsign"+"E","YE")
+                ExtractedInput = ExtractedInput.replace("hardsign"+"e","ye")
+
+            } else ExtractedInput = ExtractedInput.replace("hardsign","")
+
+
+
 
             // -----------------------------------------------------------------------
 
             Output.setText(ExtractedInput)
 
             // -----------------------------------------------------------------------
+
 
             val alertSuccessfulTranslate = getResources().getString(R.string.alertSuccessfulTranslate)
 
@@ -112,18 +179,58 @@ class MainActivity : AppCompatActivity() {
                 if (changetoUppercase.isChecked){
                     Output.setText(ExtractedInput.toUpperCase())
                 }else Output.setText(ExtractedInput.toLowerCase())
+
             }
 
             restoreText.setOnClickListener {
+
                 Output.setText(ExtractedInput)
+
+                copyToClipboard.setOnClickListener{
+
+                    var clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+
+                    var clip = ClipData.newPlainText("label",ExtractedInput)
+
+                    clipboard.setPrimaryClip(clip)
+
+                    Toast.makeText(this, alertSuccessfullyCopied, Toast.LENGTH_LONG).show()
+
+                }
+
             }
 
-            copyToClipboard.setOnClickListener() {
-                var clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                var clip = ClipData.newPlainText("label",ExtractedInput)
-                clipboard.setPrimaryClip(clip)
+            copyToClipboard.setOnClickListener {
 
-                Toast.makeText(this, alertSuccessfullyCopied, Toast.LENGTH_LONG).show()
+                var clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+
+                if (changetoUppercase.isChecked) {
+
+                    var clip = ClipData.newPlainText("label", ExtractedInput.toUpperCase())
+
+                    clipboard.setPrimaryClip(clip)
+
+                    Toast.makeText(this, alertSuccessfullyCopied, Toast.LENGTH_LONG).show()
+
+                }else if(ExtractedInput.toLowerCase()===ExtractedInput){
+
+                    var clip = ClipData.newPlainText("label",ExtractedInput.toLowerCase())
+
+                    clipboard.setPrimaryClip(clip)
+
+                    Toast.makeText(this, alertSuccessfullyCopied, Toast.LENGTH_LONG).show()
+
+                }else{
+
+                    var clip = ClipData.newPlainText("label",ExtractedInput)
+
+                    clipboard.setPrimaryClip(clip)
+
+                    Toast.makeText(this, alertSuccessfullyCopied, Toast.LENGTH_LONG).show()
+
+                }
+
+
             }
 
             if (ExtractedInput=="") {
