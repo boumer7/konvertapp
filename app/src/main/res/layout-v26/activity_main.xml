@@ -4,60 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:windowSoftInputMode="stateHidden|adjustPan"
     android:background="@color/JustWhite"
     tools:context=".MainActivity">
 
-    <ImageButton
+    <ImageView
         android:id="@+id/settingsGear"
         android:layout_width="76dp"
         android:layout_height="72dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/button_selector"
         android:contentDescription="@string/settings"
-        android:src="@mipmap/iconmonstr_gear64"
+        android:src="@drawable/gear72"
+        app:layout_constraintBottom_toBottomOf="@+id/clearButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.917"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cameraicon" />
+        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintStart_toEndOf="@+id/changetoUppercase"
+        app:layout_constraintTop_toBottomOf="@+id/cameraicon"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/cameraicon"
         android:layout_width="76dp"
         android:layout_height="72dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/button_selector"
         android:contentDescription="@string/cameraicon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.917"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/settingsGear"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/clearButton"
         app:layout_constraintTop_toBottomOf="@+id/Output"
         app:srcCompat="@drawable/camera90x90" />
-
-    <ImageView
-        android:id="@+id/ReverseTransliteration"
-        android:layout_width="76dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/button_selector"
-        android:contentDescription="@string/ReverseTransliteration"
-        app:layout_constraintEnd_toStartOf="@+id/cameraicon"
-        app:layout_constraintHorizontal_bias="0.603"
-        app:layout_constraintStart_toEndOf="@+id/copyToClipboard"
-        app:layout_constraintTop_toBottomOf="@+id/Output"
-        app:srcCompat="@drawable/arrows1" />
 
     <ImageView
         android:id="@+id/clearButton"
         android:layout_width="76dp"
         android:layout_height="72dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/button_selector"
         android:contentDescription="@string/clearButton"
-        app:layout_constraintEnd_toStartOf="@+id/cameraicon"
-        app:layout_constraintHorizontal_bias="0.603"
-        app:layout_constraintStart_toEndOf="@+id/copyToClipboard"
+        app:layout_constraintEnd_toStartOf="@+id/settingsGear"
+        app:layout_constraintHorizontal_bias="0.724"
+        app:layout_constraintStart_toEndOf="@+id/changetoUppercase"
+        app:layout_constraintTop_toBottomOf="@+id/ReverseTransliteration"
+        app:srcCompat="@drawable/iconmonstrtrashcan_120" />
+
+    <ImageView
+        android:id="@+id/ReverseTransliteration"
+        android:layout_width="76dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/button_selector"
+        android:contentDescription="@string/ReverseTransliteration"
+        app:layout_constraintBottom_toBottomOf="@+id/cameraicon"
+        app:layout_constraintEnd_toEndOf="@+id/clearButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/clearButton"
         app:layout_constraintTop_toBottomOf="@+id/Output"
-        app:srcCompat="@mipmap/iconmonstrtrashcan48" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/arrows1" />
 
     <Button
         android:id="@+id/copyToClipboard"
@@ -97,7 +104,7 @@
         app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Output"
-        app:layout_constraintVertical_bias="0.61" />
+        app:layout_constraintVertical_bias="0.64" />
 
     <Button
         android:id="@+id/restoreText"
@@ -142,7 +149,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/Output"
         android:layout_width="match_parent"
         android:layout_height="111dp"
@@ -152,12 +159,12 @@
         android:clickable="true"
         android:ems="10"
 
-        android:focusable="false"
+        android:focusable="true"
 
         android:fontFamily="@font/montserrat_bold"
+        android:padding="40dp"
         android:hint="@string/LatinResult"
-        android:inputType="textMultiLine"
-        android:maxLength="999"
+        android:maxLength="9999"
         android:text=""
         android:textAlignment="center"
         android:textColor="@color/selector_color"
@@ -183,12 +190,12 @@
         android:clickable="true"
         android:ems="10"
 
-        android:focusable="false"
+        android:focusable="true"
 
         android:fontFamily="@font/montserrat_bold"
         android:hint="@string/CyrillicInput"
         android:inputType="textMultiLine"
-        android:maxLength="999"
+        android:maxLength="9999"
         android:scrollbars="vertical"
         android:text=""
         android:textAlignment="center"

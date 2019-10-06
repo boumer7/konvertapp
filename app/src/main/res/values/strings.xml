@@ -19,7 +19,7 @@
     <string name="SuccessfullyCopied">Copied to clipboard </string>
     <string name="customizeLetters">Letter rules:</string>
     <string name="copy">Copy</string>
-    <string name="restoreText">Restore</string>
+    <string name="restoreText">Back</string>
     <string name="YouHaveAlreadyEnteredText">You have already entered text</string>
 
     <string name="alertDeletedSuccessfully">Removed successfully</string>
@@ -36,6 +36,7 @@
     </string-array>
 
     <string name="InputFullscreen" translatable="false">InputFullscreen</string>
+    <string name="backbutton" translatable="false">backbutton</string>
 
     <string name="alertYouCantCopyNothing">You can\'t copy nothing</string>
     <string name="alertYouCantMakeNothingToLowerCase">You can\'t make nothing to the lowercase</string>

@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             Input.setTextColor(getResources().getColor(R.color.Black))
 
             var ExtractedInput = Input.text.toString()
+            var UntouchedInput = Input.text.toString()
 
             ExtractedInput = ExtractedInput.replace("А","A")
             ExtractedInput = ExtractedInput.replace("Б","B")
@@ -182,6 +183,7 @@ class MainActivity : AppCompatActivity() {
             restoreText.setOnClickListener {
 
                 Output.setText(ExtractedInput)
+                Input.setText(UntouchedInput)
 
                 Toast.makeText(this, alertRestoredSuccessfully, Toast.LENGTH_LONG).show()
 
@@ -326,7 +328,34 @@ class MainActivity : AppCompatActivity() {
         settingsGear.setOnClickListener {
             val settingsWindow = Intent(this, settingsActivity::class.java)
             startActivity(settingsWindow)
+
+            overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
         }
+
+        InputFullscreen.setOnClickListener {
+            val intent = Intent(this, com.example.konvertapp.InputFullscreen::class.java)
+
+            var UntouchedInput = Input.text.toString()
+
+            var TransferedInput = Input.toString()
+
+            intent.putExtra("UntouchedInput",UntouchedInput)
+            intent.putExtra("TransferedInput",TransferedInput)
+
+            startActivity(intent)
+
+            overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
+
+        }
+
+        var FromInputFullscreenActivity = intent.getStringExtra("FromInputFullscreenActivity")
+
+
+        Input.setText(FromInputFullscreenActivity)
+
+
+
+
 
         //-------------------------------------------------------------
 
