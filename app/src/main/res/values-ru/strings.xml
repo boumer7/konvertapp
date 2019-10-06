@@ -11,4 +11,14 @@
     <string name="YouHaveAlreadyEnteredText">Вы уже ввели текст</string>
     <string name="restoreText">Вернуть</string>
     <string name="SuccessfullyCopied">Cкопировано успешно</string>
+    <string name="TransliterationSystem">Система транслитерации:</string>
+    <string name="OfficialTransliterationSystems">Официальные:</string>
+    <string name="alertDeletedSuccessfully">Удалено успешно</string>
+    <string name="alertRestoredSuccessfully">Восстановлено успешно</string>
+    <string name="alertYouCantCopyNothing">Вы не можете скопировать</string>
+    <string name="alertYouCantMakeNothingToLowerCase">Вы не можете перевести в нижний регистр</string>
+    <string name="alertYouCantMakeNothingToUpperCase">Вы не можете перевести в верхний регистр</string>
+    <string name="alertYouCantRestoreNothing">Вы не можете вернуть</string>
+    <string name="russianip2019">Как в загранпаспорте (2019)</string>
+    <string name="yandexdefault">Яндекс (по умолчанию)</string>
 </resources>

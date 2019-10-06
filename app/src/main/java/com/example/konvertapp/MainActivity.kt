@@ -16,10 +16,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         setContentView(R.layout.activity_main)
 
         TranslateButton.setOnClickListener {
+
             Output.setTextColor(getResources().getColor(R.color.Black))
             Input.setTextColor(getResources().getColor(R.color.Black))
 
@@ -99,8 +99,6 @@ class MainActivity : AppCompatActivity() {
 
                 ExtractedInput = ExtractedInput.toUpperCase()
 
-
-
             }else if (ExtractedInput.startsWith("ZH")) {
 
                 ExtractedInput = ExtractedInput.replace(ExtractedInput[1].toString(),ExtractedInput[1].toString().toLowerCase())
@@ -140,17 +138,10 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-            if (ExtractedInput.endsWith("YY")) {
-
-               ExtractedInput = ExtractedInput.replace("YY","IY")
-
-            }
-
-            if (ExtractedInput.endsWith("yy")) {
-
-                ExtractedInput = ExtractedInput.replace("yy","iy")
-
-            }
+            if (ExtractedInput.contains("yy")) ExtractedInput = ExtractedInput.replace("yy","iy")
+            if (ExtractedInput.contains("YY")) ExtractedInput = ExtractedInput.replace("YY","IY")
+            if (ExtractedInput.contains("yY")) ExtractedInput = ExtractedInput.replace("yY","iY")
+            if (ExtractedInput.contains("Yy")) ExtractedInput = ExtractedInput.replace("Yy","Iy")
 
             if (ExtractedInput.contains("hardsign"+"E") || ExtractedInput.contains("hardsign"+"e")){
 
@@ -159,21 +150,27 @@ class MainActivity : AppCompatActivity() {
 
             } else ExtractedInput = ExtractedInput.replace("hardsign","")
 
-
-
-
             // -----------------------------------------------------------------------
 
             Output.setText(ExtractedInput)
 
             // -----------------------------------------------------------------------
 
+            // -----------------------------------------------------------------------
+
+            // some alerts
 
             val alertSuccessfulTranslate = getResources().getString(R.string.alertSuccessfulTranslate)
 
             val alertNothingBeenEntered = getResources().getString(R.string.alertNothingBeenEntered)
 
             val alertSuccessfullyCopied = getResources().getString(R.string.SuccessfullyCopied)
+
+            val alertSuccessfullyRemoved = getResources().getString(R.string.alertDeletedSuccessfully)
+
+            val alertRestoredSuccessfully = getResources().getString(R.string.alertRestoredSuccessfully)
+
+            // -----------------------------------------------------------------------
 
             changetoUppercase.setOnClickListener{
                 if (changetoUppercase.isChecked){
@@ -186,6 +183,8 @@ class MainActivity : AppCompatActivity() {
 
                 Output.setText(ExtractedInput)
 
+                Toast.makeText(this, alertRestoredSuccessfully, Toast.LENGTH_LONG).show()
+
                 copyToClipboard.setOnClickListener{
 
                     var clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -195,6 +194,39 @@ class MainActivity : AppCompatActivity() {
                     clipboard.setPrimaryClip(clip)
 
                     Toast.makeText(this, alertSuccessfullyCopied, Toast.LENGTH_LONG).show()
+
+                }
+
+                copyToClipboard.setOnClickListener {
+
+                    var clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+
+                    if (changetoUppercase.isChecked) {
+
+                        var clip = ClipData.newPlainText("label", ExtractedInput.toUpperCase())
+
+                        clipboard.setPrimaryClip(clip)
+
+                        Toast.makeText(this, alertSuccessfullyCopied, Toast.LENGTH_LONG).show()
+
+
+                    }else if(ExtractedInput.toLowerCase()===ExtractedInput){
+
+                        var clip = ClipData.newPlainText("label",ExtractedInput.toLowerCase())
+
+                        clipboard.setPrimaryClip(clip)
+
+                        Toast.makeText(this, alertSuccessfullyCopied, Toast.LENGTH_LONG).show()
+
+                    }else{
+
+                        var clip = ClipData.newPlainText("label",ExtractedInput)
+
+                        clipboard.setPrimaryClip(clip)
+
+                        Toast.makeText(this, alertSuccessfullyCopied, Toast.LENGTH_LONG).show()
+
+                    }
 
                 }
 
@@ -211,6 +243,7 @@ class MainActivity : AppCompatActivity() {
                     clipboard.setPrimaryClip(clip)
 
                     Toast.makeText(this, alertSuccessfullyCopied, Toast.LENGTH_LONG).show()
+
 
                 }else if(ExtractedInput.toLowerCase()===ExtractedInput){
 
@@ -230,11 +263,56 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-
             }
 
-            if (ExtractedInput=="") {
+            clearButton.setOnClickListener{
+
+                if(!ExtractedInput.isNullOrBlank()) {
+
+                    Output.setText(null)
+                    Input.setText(null)
+
+                    Toast.makeText(this, alertSuccessfullyRemoved, Toast.LENGTH_LONG).show()
+                }
+
+                copyToClipboard.setOnClickListener {
+
+                    var clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+
+                    if (changetoUppercase.isChecked) {
+
+                        var clip = ClipData.newPlainText("label", ExtractedInput.toUpperCase())
+
+                        clipboard.setPrimaryClip(clip)
+
+                        Toast.makeText(this, alertSuccessfullyCopied, Toast.LENGTH_LONG).show()
+
+
+
+                    }else if(ExtractedInput.toLowerCase()===ExtractedInput){
+
+                        var clip = ClipData.newPlainText("label",ExtractedInput.toLowerCase())
+
+                        clipboard.setPrimaryClip(clip)
+
+                        Toast.makeText(this, alertSuccessfullyCopied, Toast.LENGTH_LONG).show()
+
+                    }else{
+
+                        var clip = ClipData.newPlainText("label",ExtractedInput)
+
+                        clipboard.setPrimaryClip(clip)
+
+                        Toast.makeText(this, alertSuccessfullyCopied, Toast.LENGTH_LONG).show()
+
+                    }
+                }
+            }
+
+            if (ExtractedInput.isNullOrBlank()) {
+
                 Toast.makeText(this, alertNothingBeenEntered, Toast.LENGTH_LONG).show()
+
             }else Toast.makeText(this, alertSuccessfulTranslate, Toast.LENGTH_LONG).show()
 
         } // Where the Translate Button Listener ends
@@ -250,10 +328,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(settingsWindow)
         }
 
-
+        //-------------------------------------------------------------
 
     }
-
-
-
 }

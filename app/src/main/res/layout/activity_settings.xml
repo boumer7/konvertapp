@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#070707"
+    android:background="@color/JustWhite"
     tools:context=".settingsActivity">
 
     <TextView
         android:id="@+id/settingsText"
-        android:layout_width="344dp"
-        android:layout_height="99dp"
+        android:layout_width="398dp"
+        android:layout_height="113dp"
+        android:background="@drawable/buttonsharp"
         android:fontFamily="@font/montserrat_bold"
         android:text="@string/settingsText"
         android:textAlignment="center"
@@ -19,27 +20,64 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.673"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.046" />
-
-    <View
-        android:id="@+id/lineTop"
-        android:layout_width="match_parent"
-        android:layout_height="13dp"
-        android:background="#D84915"
-        app:layout_constraintBottom_toTopOf="@+id/LineBottom"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.198"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/LineBottom"
         android:layout_width="match_parent"
         android:layout_height="13dp"
-        android:background="#D84915"
+        android:background="@drawable/buttonsharp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/TransliterationSystem"
+        android:layout_width="288dp"
+        android:layout_height="88dp"
+        android:layout_margin="18dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/TransliterationSystem"
+        android:textColor="@color/Black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.233"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsText" />
+
+    <TextView
+        android:id="@+id/OfficialTransliterations"
+        android:layout_width="138dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="18sp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/OfficialTransliterationSystems"
+        android:textAlignment="viewStart"
+        android:textColor="@color/Black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TransliterationSystem" />
+
+    <Spinner
+        android:id="@+id/TransliterationOfficalSystemList"
+        android:layout_width="158dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/dropdown_selector"
+        android:fontFamily="@font/montserrat_bold"
+        android:theme="@style/SpinnerTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.328"
+        app:layout_constraintStart_toEndOf="@+id/OfficialTransliterations"
+        app:layout_constraintTop_toBottomOf="@+id/TransliterationSystem" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

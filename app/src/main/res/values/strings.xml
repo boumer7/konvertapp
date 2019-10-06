@@ -6,8 +6,14 @@
     <string name="LatinResult">Your result in Latin</string>
     <string name="settings" translatable="false">settings</string>
     <string name="cameraicon" translatable="false">cameraicon</string>
+    <string name="ReverseTransliteration" translatable="false">ReverseTransliteration</string>
     <string name="settingsText">Settings</string>
+    <string name="clearButton" translatable="false">clearButton</string>
     <string name="alertSuccessfulTranslate">Translated successfully</string>
+
+    <string name="TransliterationSystem">Transliteration System:</string>
+    <string name="OfficialTransliterationSystems">Official:</string>
+
     <string name="changetouppercase" translatable="false">aa\nAA</string>
     <string name="alertNothingBeenEntered">You haven\'t entered anything</string>
     <string name="SuccessfullyCopied">Copied to clipboard </string>
@@ -15,4 +21,25 @@
     <string name="copy">Copy</string>
     <string name="restoreText">Restore</string>
     <string name="YouHaveAlreadyEnteredText">You have already entered text</string>
+
+    <string name="alertDeletedSuccessfully">Removed successfully</string>
+    <string name="alertRestoredSuccessfully">Restored successfully</string>
+
+    <string name="yandexdefault">Yandex (default)</string>
+    <string name="russianip2019">Russian International Passport (2019)</string>
+
+    <string-array name="TransliterationSystemsList">
+
+        <item name="yandexdefault">@string/yandexdefault</item>
+        <item name="russianip2019">@string/russianip2019</item>
+
+    </string-array>
+
+    <string name="InputFullscreen" translatable="false">InputFullscreen</string>
+
+    <string name="alertYouCantCopyNothing">You can\'t copy nothing</string>
+    <string name="alertYouCantMakeNothingToLowerCase">You can\'t make nothing to the lowercase</string>
+    <string name="alertYouCantMakeNothingToUpperCase">You can\'t make nothing to the uppercase</string>
+    <string name="alertYouCantRestoreNothing">You can\'t restore nothing</string>
+
 </resources>
