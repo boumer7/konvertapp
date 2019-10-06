@@ -350,7 +350,6 @@ class MainActivity : AppCompatActivity() {
 
         var FromInputFullscreenActivity = intent.getStringExtra("FromInputFullscreenActivity")
 
-
         Input.setText(FromInputFullscreenActivity)
 
 
