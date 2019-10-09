@@ -332,6 +332,7 @@ class MainActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
         }
 
+
         InputFullscreen.setOnClickListener {
             val intent = Intent(this, com.example.konvertapp.InputFullscreen::class.java)
 
@@ -342,9 +343,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("UntouchedInput",UntouchedInput)
             intent.putExtra("TransferedInput",TransferedInput)
 
+
             startActivity(intent)
 
             overridePendingTransition(R.anim.slide_in, R.anim.slide_out)
+
 
         }
 

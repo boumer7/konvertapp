@@ -16,4 +16,16 @@
 
     </style>
 
+    <style name="SCBSwitch" parent="Theme.AppCompat.Light">
+
+        <item name="colorControlActivated">@color/JustWhite</item>
+
+
+        <item name="colorSwitchThumbNormal">@color/VeryDarkBlue
+        </item>
+
+        <item name="android:colorForeground">@color/DarkerBlue
+        </item>
+    </style>
+
 </resources>

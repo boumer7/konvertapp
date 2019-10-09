@@ -95,6 +95,7 @@
         android:fontFamily="@font/montserrat_bold"
         android:text="@string/changetouppercase"
         android:textAlignment="center"
+        android:theme="@style/SCBSwitch"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
