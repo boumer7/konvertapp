@@ -4,72 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:windowSoftInputMode="stateHidden|adjustPan"
+    android:layout_margin="0dp"
     android:background="@color/JustWhite"
+    android:windowSoftInputMode="stateHidden|adjustPan"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/settingsGear"
-        android:layout_width="76dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/button_selector"
-        android:contentDescription="@string/settings"
-        android:src="@drawable/gear72"
-        app:layout_constraintBottom_toBottomOf="@+id/clearButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
-        app:layout_constraintStart_toEndOf="@+id/changetoUppercase"
-        app:layout_constraintTop_toBottomOf="@+id/cameraicon"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/cameraicon"
-        android:layout_width="76dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/button_selector"
-        android:contentDescription="@string/cameraicon"
-        app:layout_constraintEnd_toEndOf="@+id/settingsGear"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/clearButton"
-        app:layout_constraintTop_toBottomOf="@+id/Output"
-        app:srcCompat="@drawable/camera90x90" />
-
-    <ImageView
-        android:id="@+id/clearButton"
-        android:layout_width="76dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/button_selector"
-        android:contentDescription="@string/clearButton"
-        app:layout_constraintEnd_toStartOf="@+id/settingsGear"
-        app:layout_constraintHorizontal_bias="0.724"
-        app:layout_constraintStart_toEndOf="@+id/changetoUppercase"
-        app:layout_constraintTop_toBottomOf="@+id/ReverseTransliteration"
-        app:srcCompat="@drawable/iconmonstrtrashcan_120" />
-
-    <ImageView
-        android:id="@+id/ReverseTransliteration"
-        android:layout_width="76dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="20dp"
+    <ImageButton
+        android:id="@+id/reverseButton"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
         android:background="@drawable/button_selector"
         android:contentDescription="@string/ReverseTransliteration"
-        app:layout_constraintBottom_toBottomOf="@+id/cameraicon"
-        app:layout_constraintEnd_toEndOf="@+id/clearButton"
+        app:layout_constraintBottom_toBottomOf="@+id/TranslateButton"
+        app:layout_constraintEnd_toStartOf="@+id/TranslateButton"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/clearButton"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Output"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/arrows1" />
+        app:srcCompat="@mipmap/arrows96x96" />
+
+    <ImageButton
+        android:id="@+id/cameraicon"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button_selector"
+        android:contentDescription="@string/cameraicon"
+        app:layout_constraintBottom_toBottomOf="@+id/TranslateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/TranslateButton"
+        app:layout_constraintTop_toBottomOf="@+id/Output"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@mipmap/cameraicon64x64" />
+
+    <ImageButton
+        android:id="@+id/clearButton"
+        android:layout_width="161dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_selector"
+        android:contentDescription="@string/clearButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/changetoUppercase"
+        app:layout_constraintTop_toBottomOf="@+id/cameraicon"
+        app:srcCompat="@mipmap/trashicon64x64" />
 
     <Button
         android:id="@+id/copyToClipboard"
-        android:layout_width="141dp"
+        android:layout_width="161dp"
         android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button_selector"
         android:fadingEdge="horizontal"
         android:fontFamily="@font/montserrat_bold"
@@ -79,38 +66,36 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/changetoUppercase"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cameraicon"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintBottom_toBottomOf="@+id/settingsGear"
+        app:layout_constraintEnd_toEndOf="@+id/changetoUppercase"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/changetoUppercase"
+        app:layout_constraintTop_toBottomOf="@+id/changetoUppercase"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Switch
         android:id="@+id/changetoUppercase"
-        android:layout_width="141dp"
-        android:layout_height="79dp"
+        android:layout_width="161dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_selector"
         android:fadingEdge="horizontal"
         android:fontFamily="@font/montserrat_bold"
         android:text="@string/changetouppercase"
         android:textAlignment="center"
-        android:theme="@style/SCBSwitch"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/settingsGear"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
+        android:theme="@style/SCBSwitch"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Output"
-        app:layout_constraintVertical_bias="0.64" />
+        app:layout_constraintTop_toBottomOf="@+id/reverseButton" />
 
     <Button
         android:id="@+id/restoreText"
-        android:layout_width="141dp"
+        android:layout_width="161dp"
         android:layout_height="48dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button_selector"
         android:fadingEdge="horizontal"
         android:fontFamily="@font/montserrat_bold"
@@ -120,10 +105,12 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/changetoUppercase" />
+        app:layout_constraintBottom_toBottomOf="@+id/settingsGear"
+        app:layout_constraintEnd_toEndOf="@+id/clearButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/clearButton"
+        app:layout_constraintTop_toBottomOf="@+id/clearButton"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/LineBottom"
@@ -137,35 +124,42 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="395dp"
-        android:layout_height="113dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="0dp"
         android:background="@drawable/buttonsharp"
         android:fontFamily="@font/montserrat_bold"
-        android:padding="12dp"
         android:text="@string/konvert"
         android:textAlignment="center"
         android:textColor="#FFF"
-        android:textSize="64sp"
+        android:textSize="56sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/Output"
         android:layout_width="match_parent"
         android:layout_height="111dp"
         android:layout_marginTop="20dp"
+
         android:autofillHints=""
         android:background="@drawable/border_textview"
         android:clickable="true"
         android:ems="10"
 
         android:focusable="true"
-
         android:fontFamily="@font/montserrat_bold"
-        android:padding="40dp"
+
         android:hint="@string/LatinResult"
+
         android:maxLength="9999"
+        android:padding="40dp"
+        android:paddingLeft="30dp"
+        android:paddingTop="30dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="30dp"
         android:text=""
         android:textAlignment="center"
         android:textColor="@color/selector_color"
@@ -179,24 +173,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TranslateButton" />
+        app:layout_constraintTop_toBottomOf="@+id/Input" />
 
     <EditText
         android:id="@+id/Input"
         android:layout_width="match_parent"
         android:layout_height="111dp"
-        android:layout_marginTop="20dp"
         android:autofillHints=""
+
         android:background="@drawable/border_textview"
         android:clickable="true"
         android:ems="10"
-
         android:focusable="true"
 
         android:fontFamily="@font/montserrat_bold"
         android:hint="@string/CyrillicInput"
+
         android:inputType="textMultiLine"
+
         android:maxLength="9999"
+        android:paddingLeft="30dp"
+        android:paddingTop="30dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="30dp"
         android:scrollbars="vertical"
         android:text=""
         android:textAlignment="center"
@@ -215,27 +214,29 @@
 
     <Button
         android:id="@+id/TranslateButton"
-        android:layout_width="191dp"
-        android:layout_height="81dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="218dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/button_selector"
         android:fadingEdge="horizontal"
         android:fontFamily="@font/montserrat_bold"
         android:text="@string/TranslateButton"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Input" />
+        app:layout_constraintTop_toBottomOf="@+id/Output" />
 
     <ImageView
         android:id="@+id/InputFullscreen"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:background="@drawable/fullscreen_texture"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/InputFullscreen"
         app:layout_constraintBottom_toBottomOf="@+id/Input"
         app:layout_constraintEnd_toEndOf="parent"
@@ -243,13 +244,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Input"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/iconmonst32" />
+        app:srcCompat="@mipmap/fs24x24_bold_grey" />
+
+    <ImageButton
+        android:id="@+id/settingsGear"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_marginTop="156dp"
+        android:background="@drawable/button_selector"
+        android:contentDescription="@string/settings"
+        android:src="@mipmap/gearicon64x64"
+        app:layout_constraintEnd_toStartOf="@+id/clearButton"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toEndOf="@+id/changetoUppercase"
+        app:layout_constraintTop_toBottomOf="@+id/TranslateButton" />
 
     <ImageView
         android:id="@+id/OutputFullScreen"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:background="@drawable/fullscreen_texture"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/InputFullscreen"
         app:layout_constraintBottom_toBottomOf="@+id/Output"
         app:layout_constraintEnd_toEndOf="parent"
@@ -257,6 +273,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/Output"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@mipmap/iconmonst32" />
+        app:srcCompat="@mipmap/fs24x24_bold_grey" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
