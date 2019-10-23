@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name" translatable="false">konvertapp</string>
     <string name="konvert" translatable="false">KONVERT</string>
-    <string name="CyrillicInput">Enter your text in Cyrillic</string>
+    <string name="CyrillicInput">Enter your text</string>
     <string name="TranslateButton">TRANSLATE</string>
-    <string name="LatinResult">Your result in Latin</string>
+    <string name="LatinResult">Your result</string>
     <string name="settings" translatable="false">settings</string>
     <string name="cameraicon" translatable="false">cameraicon</string>
     <string name="ReverseTransliteration" translatable="false">ReverseTransliteration</string>
